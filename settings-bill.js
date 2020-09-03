@@ -59,11 +59,12 @@ module.exports=function SettingsBill() {
         }
     }
     function billType(billType) {
-
+        var  cost = 0;
+        if(billType){
         
 
         if (!hasReachedCriticalLevel()){
-        var  cost = 0;
+       
         if (billType === "call") {
             callCostTotal += callCost;
             cost = callCost;
@@ -81,6 +82,7 @@ module.exports=function SettingsBill() {
     }
 
  }
+}
 function actionsFor(type){
     
     const filteredActions = [];
@@ -153,7 +155,6 @@ function actionsFor(type){
         hasReachedCriticalLevel,
         billType,
         action,
-        
         actionsFor
         
         
