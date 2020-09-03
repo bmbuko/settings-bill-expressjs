@@ -53,17 +53,12 @@ app.post("/actions", function (req, res) {
 });
 app.get("/actions", function (req, res) {
 
-  //const actionType = req.params.actionType
   var actionForAgo = settingsBill.action();
   for (var item of actionForAgo) {
     item.ago = moment(item.timestamp).fromNow()
   }
   res.render("actions", {
-    actions: settingsBill.action(),
     actions: actionForAgo
-
-
-
   })
 
 });
@@ -72,14 +67,12 @@ app.get("/actions/:actionType", function (req, res) {
 
 
   {
-    var actionForAgo = settingsBill.action();
+    var actionForAgo =settingsBill.actionsFor(actionType);
     for (var item of actionForAgo) {
       item.ago = moment(item.timestamp).fromNow()
     }
     res.render("actions", {
-     // actions: settingsBill.action(),
-      actions: settingsBill.actionsFor(actionType),
-      //actions: actionForAgo
+      actions: actionForAgo
       
 
     })
