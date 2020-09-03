@@ -1,7 +1,7 @@
 {
-  "name": "settings-bill-expressjs",
+  "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Build Status](https://travis-ci.com/bmbuko/settings-bill-expressjs.svg?branch=master)](https://travis-ci.com/bmbuko/settings-bill-expressjs)",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -13,7 +13,9 @@
   },
   "devDependencies": {
     "mocha": "^8.1.3"
+  
   },
+
   "scripts": {
     "test": "mocha"
   },
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/bmbuko/settings-bill-expressjs/issues"
   },
-  "homepage": "https://github.com/bmbuko/settings-bill-expressjs#readme"
+  "homepage": "https://github.com/bmbuko/settings-bill-expressjs#readme",
+  "directories": {
+    "test": "test"
+  }
 }
