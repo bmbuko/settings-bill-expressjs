@@ -25,9 +25,9 @@ app.get("/", function (req, res) {
     smsCost: settingsBill.getSmsCost(),
     theWarningLevel: settingsBill.getWarningLevel(),
     theCriticalLevel: settingsBill.getCriticalLevel(),
-    callCostTotal: settingsBill.getTotalCallCost(),
-    smsCostTotal: settingsBill.getTotalSmsCost(),
-    getTotalCost: settingsBill.getTotalCost(),
+    callCostTotal: settingsBill.getTotalCallCost("call").toFixed(2),
+    smsCostTotal: settingsBill.getTotalSmsCost("sms").toFixed(2),
+    getTotalCost: settingsBill.getTotalCost().toFixed(2),
     color:settingsBill.totalClassName()
 
 
@@ -72,7 +72,7 @@ app.get("/actions/:actionType", function (req, res) {
       item.ago = moment(item.timestamp).fromNow()
     }
     res.render("actions", {
-      actions: actionForAgo
+      actions:actionForAgo
       
 
     })
